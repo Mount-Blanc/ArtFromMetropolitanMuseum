@@ -8,6 +8,7 @@
 <button @click="setEurope">Europe</button>   
 <button @click="setIndia">India</button>   
 <button @click="setAfrica">Africa</button>   
+<button @click="setRussia">Russia</button>   
 
 
 
@@ -33,6 +34,12 @@ methods: {
     console.log(this.Category)
     this.getCultureID()
   },
+  setRussia() {
+    this.Category="Russia"
+    console.log(this.Category)
+    this.getCultureID()
+  },
+
   setMexico() {
     this.Category="Mexico"
     console.log(this.Category)
