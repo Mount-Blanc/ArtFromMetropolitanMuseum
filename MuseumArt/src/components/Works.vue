@@ -1,5 +1,7 @@
 <template>
-    <p>this is works</p>
+    <button @click="setFrench">French</button>
+    <button @click="setChina">China</button>
+
     <li  v-for="item in Art">{{ item }}></li>
 </template>
 
@@ -7,13 +9,24 @@
 export default {
     data() {
     return {
-      Art: []
+      Art: [],
+      Category:'',
     }
 },
 methods: {
+  setFrench() {
+    this.Category="french"
+    console.log(this.Category)
+    this.getCultureID()
+  },
+  setChina() {
+    this.Category="China"
+    console.log(this.Category)
+    this.getCultureID()
+  },
     getCultureID() {
       // Simple GET request using fetch
-      fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?artistOrCulture=true&q=french")
+      fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?artistOrCulture=true&q=${this.Category}`)
         .then(response => response.json())
         .then(data => {
           const objectID = data.objectIDs;
