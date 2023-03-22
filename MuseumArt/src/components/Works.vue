@@ -1,25 +1,58 @@
-<script setup>
-import French from './French.vue';
-</script>
 
 
 
 <template>
-   
-    <French></French>
-    <li  v-for="item in Art">{{ item }}></li>
+<button @click="setFrench">French</button> 
+<button @click="setChina">China</button>   
+<button @click="setMexico">Mexico</button>
+<button @click="setEurope">Europe</button>   
+<button @click="setIndia">India</button>   
+<button @click="setAfrica">Africa</button>   
+
+
+
 </template>
 
 <script>  
 export default {
+  
     data() {
     return {
       Art: [],
-      Category:'french',
+      Category:'',
     }
 },
 methods: {
- 
+  setFrench() {
+    this.Category="France"
+    console.log(this.Category)
+    this.getCultureID()
+  },
+  setChina() {
+    this.Category="China"
+    console.log(this.Category)
+    this.getCultureID()
+  },
+  setMexico() {
+    this.Category="Mexico"
+    console.log(this.Category)
+    this.getCultureID()
+  },
+  setEurope() {
+    this.Category="Europe"
+    console.log(this.Category)
+    this.getCultureID()
+  },
+  setIndia() {
+    this.Category="India"
+    console.log(this.Category)
+    this.getCultureID()
+  },
+  setAfrica() {
+    this.Category="Africa"
+    console.log(this.Category)
+    this.getCultureID()
+  },
     getCultureID() {
       // Simple GET request using fetch
       fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${this.Category}&q=flowers`)
@@ -47,9 +80,6 @@ methods: {
           console.log(data)
         });
     }
-  },
-  beforeMount() {
-    this.getCultureID();
   },
 }
 </script>
