@@ -1,32 +1,28 @@
-<template>
-    <button @click="setFrench">French</button>
-    <button @click="setChina">China</button>
+<script setup>
+import French from './French.vue';
+</script>
 
+
+
+<template>
+   
+    <French></French>
     <li  v-for="item in Art">{{ item }}></li>
 </template>
 
-<script>   
+<script>  
 export default {
     data() {
     return {
       Art: [],
-      Category:'',
+      Category:'french',
     }
 },
 methods: {
-  setFrench() {
-    this.Category="french"
-    console.log(this.Category)
-    this.getCultureID()
-  },
-  setChina() {
-    this.Category="China"
-    console.log(this.Category)
-    this.getCultureID()
-  },
+ 
     getCultureID() {
       // Simple GET request using fetch
-      fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?artistOrCulture=true&q=${this.Category}`)
+      fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${this.Category}&q=flowers`)
         .then(response => response.json())
         .then(data => {
           const objectID = data.objectIDs;
