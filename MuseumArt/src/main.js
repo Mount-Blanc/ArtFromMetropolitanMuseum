@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-
+import BaseCard from './components/UI/BaseCard.vue'
 import './assets/main.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.component('base-card',BaseCard)
+app.mount('#app')

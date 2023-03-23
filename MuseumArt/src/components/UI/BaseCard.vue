@@ -1,7 +1,17 @@
 <template>
-    <slot></slot>
-</template>
-
-<style scoped>
-
-</style>
+    <div class="base-card">
+      <slot></slot>
+    </div>
+  </template>
+  
+ 
+  
+  <style scoped>
+  .base-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  </style>
+  
