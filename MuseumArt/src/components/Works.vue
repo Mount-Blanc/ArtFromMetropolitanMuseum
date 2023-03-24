@@ -13,7 +13,7 @@
 {{ items.title }}
 {{ items.culture }}
 {{ items.itemName }}
-<a :href="items.primaryImage">Image Link</a>
+<a :href="items.primaryImage" target="_blank">Image Link</a>
 {{ items.artistDisplayName }}
 {{ items.artistDisplayBio }}
 {{ items.classification }}
@@ -107,18 +107,17 @@ methods: {
         .then(data => {
 
           const objectID = data.objectIDs;
-          objectID.forEach((id, index) => {
-            if (this.count < this.twelve) {
-          this.getCultureArt(id);
-          this.count++; // increment counter after processing an ID
-          console.log(this.count)
-        } else {
-          return; // exit loop if counter reaches 20
-        }
-          });
+          const startIndex = this.count;
+      const endIndex = this.count + this.twelve;
+      const idSubset = objectID.slice(startIndex, endIndex);
+
+idSubset.forEach(id => {
+  this.getCultureArt(id);
+});
+
+this.count += this.twelve;
 
         });
-        this.twelve += 12
     },
     getCultureArt(id) {
       // Simple GET request using fetch
