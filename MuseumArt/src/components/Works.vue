@@ -13,7 +13,9 @@
 {{ items.title }}
 {{ items.culture }}
 {{ items.itemName }}
-<a :href="items.primaryImage" target="_blank">Image Link</a>
+<span v-if="items.primaryImage">
+        <a :href="items.primaryImage" target="_blank">Image Link</a>
+      </span>
 {{ items.artistDisplayName }}
 {{ items.artistDisplayBio }}
 {{ items.classification }}
