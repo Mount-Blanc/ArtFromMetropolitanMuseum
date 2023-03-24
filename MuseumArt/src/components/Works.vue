@@ -13,12 +13,13 @@
 {{ items.title }}
 {{ items.culture }}
 {{ items.itemName }}
+{{ items.primaryImage }}
 {{ items.artistDisplayName }}
 {{ items.artistDisplayBio }}
 {{ items.classification }}
 </base-card>
 
-
+<button @click="getCultureID">Load More</button>
 </template>
 
 <script>  
@@ -28,6 +29,7 @@ export default {
     return {
       Art: [],
       Category:'',
+      offset: 0,
     }
 },
 methods: {
@@ -67,9 +69,9 @@ methods: {
     console.log(this.Category)
     this.getCultureID()
   },
-    getCultureID() {
+    getCultureID(offset = 0) {
       // Simple GET request using fetch
-      fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${this.Category}&q=flowers`)
+      fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${this.Category}&q=flowers&offset=${this.offset}`)
         .then(response => response.json())
         .then(data => {
           const objectID = data.objectIDs;
@@ -83,6 +85,7 @@ methods: {
           return; // exit loop if counter reaches 20
         }
           });
+          this.offset += 2;
         });
     },
     getCultureArt(id) {
