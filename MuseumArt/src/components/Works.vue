@@ -2,6 +2,7 @@
 
 
 <template>
+  <h2>Pick a Category</h2>
 <button @click="setFrench">French</button> 
 <button @click="setChina">China</button>   
 <button @click="setMexico">Mexico</button>
