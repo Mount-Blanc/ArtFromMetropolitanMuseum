@@ -37,37 +37,67 @@ methods: {
   setFrench() {
     this.Category="France"
     console.log(this.Category)
+    this.Art=[]
+    this.twelve=12
+    this.count=0
+
     this.getCultureID()
   },
   setChina() {
     this.Category="China"
     console.log(this.Category)
+    this.Art=[]
+    this.twelve=12
+    this.count=0
+
     this.getCultureID()
   },
   setRussia() {
     this.Category="Russia"
     console.log(this.Category)
+    this.Art=[]
+    this.twelve=12
+    this.count=0
+
     this.getCultureID()
   },
 
   setMexico() {
     this.Category="Mexico"
     console.log(this.Category)
+    this.Art=[]
+    this.twelve=12
+    this.count=0
+
     this.getCultureID()
   },
   setEurope() {
     this.Category="Europe"
     console.log(this.Category)
+    this.Art=[]
+    this.twelve=12
+    this.count=0
+
     this.getCultureID()
   },
   setIndia() {
     this.Category="India"
     console.log(this.Category)
+    this.Art=[]
+    this.twelve=12
+    this.count=0
+
+
     this.getCultureID()
   },
   setAfrica() {
     this.Category="Africa"
     console.log(this.Category)
+    this.Art=[]
+    this.twelve=12
+    this.count=0
+
+
     this.getCultureID()
   },
     getCultureID() {
