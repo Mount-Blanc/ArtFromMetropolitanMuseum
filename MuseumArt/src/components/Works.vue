@@ -29,7 +29,8 @@ export default {
     return {
       Art: [],
       Category:'',
-      offset: 0,
+      count:0,
+      twelve:12
     }
 },
 methods: {
@@ -69,24 +70,25 @@ methods: {
     console.log(this.Category)
     this.getCultureID()
   },
-    getCultureID(offset = 0) {
+    getCultureID() {
       // Simple GET request using fetch
-      fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${this.Category}&q=flowers&offset=${this.offset}`)
+      fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${this.Category}&q=flowers`)
         .then(response => response.json())
         .then(data => {
+
           const objectID = data.objectIDs;
-          let counter = 0;
           objectID.forEach((id, index) => {
-            if (counter < 2) {
+            if (this.count < this.twelve) {
           this.getCultureArt(id);
-          counter++; // increment counter after processing an ID
-          console.log(counter)
+          this.count++; // increment counter after processing an ID
+          console.log(this.count)
         } else {
           return; // exit loop if counter reaches 20
         }
           });
-          this.offset += 2;
+
         });
+        this.twelve += 12
     },
     getCultureArt(id) {
       // Simple GET request using fetch
