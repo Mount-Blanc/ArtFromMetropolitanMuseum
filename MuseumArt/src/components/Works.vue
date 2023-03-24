@@ -9,7 +9,14 @@
 <button @click="setIndia">India</button>   
 <button @click="setAfrica">Africa</button>   
 <button @click="setRussia">Russia</button>   
-<base-card v-for="items in Art"  >{{ items }}</base-card>
+<base-card v-for="items in Art"  >
+{{ items.title }}
+{{ items.culture }}
+{{ items.itemName }}
+{{ items.artistDisplayName }}
+{{ items.artistDisplayBio }}
+{{ items.classification }}
+</base-card>
 
 
 </template>
