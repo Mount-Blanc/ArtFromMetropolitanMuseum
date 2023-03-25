@@ -8,7 +8,7 @@
   
   <style scoped>
   .base-card {
-    background-color: #ffffff;
+    background-color: #908160;
     display: flex;
     flex-direction: column;
     text-align: center;
