@@ -1,7 +1,7 @@
 <template>
 <form @submit.prevent="getArtist">
     <input  type="text" placeholder="Search Artist"/>
-    <button>Submit</button>
+    <button  class="button-56">Submit</button>
 </form>
 </template>
 

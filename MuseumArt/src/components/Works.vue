@@ -3,13 +3,13 @@
 
 <template>
   <h2>Pick a Category</h2>
-<button @click="setFrench">French</button> 
-<button @click="setChina">China</button>   
-<button @click="setMexico">Mexico</button>
-<button @click="setEurope">Europe</button>   
-<button @click="setIndia">India</button>   
-<button @click="setAfrica">Africa</button>   
-<button @click="setRussia">Russia</button>   
+<button class="button-56" @click="setFrench">French</button> 
+<button  class="button-56" @click="setChina">China</button>   
+<button  class="button-56" @click="setMexico">Mexico</button>
+<button  class="button-56" @click="setEurope">Europe</button>   
+<button  class="button-56" @click="setIndia">India</button>   
+<button  class="button-56" @click="setAfrica">Africa</button>   
+<button  class="button-56" @click="setRussia">Russia</button>   
 <base-card v-for="items in Art"   >
 {{ items.title }}
 {{ items.culture }}
