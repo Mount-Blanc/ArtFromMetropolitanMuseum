@@ -22,7 +22,7 @@
 {{ items.classification }}
 </base-card>
 
-<button @click="getCultureID">Load More</button>
+<button class="button-56" @click="getCultureID">Load More</button>
 </template>
 
 <script>  
