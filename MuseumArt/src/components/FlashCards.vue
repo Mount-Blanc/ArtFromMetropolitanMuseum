@@ -1,5 +1,5 @@
 <template>
-<h1>HELLO</h1>
+<h1>THIS IS THE FLASHCARDS</h1>
 </template>
 
 <script>

@@ -11,9 +11,14 @@
 <button  class="button-56" @click="setAfrica">Africa</button>   
 <button  class="button-56" @click="setRussia">Russia</button>   
 
-<FlashCards></FlashCards>
+<component :is="currentComponent"></component>
 
-<base-card v-for="items in Art"   >
+<button @click="setFlashcard">FlashCards  </button>
+<button @click="this.currentComponent = ''">ArtList  </button>
+
+
+
+<base-card v-if="this.currentComponent != 'FlashCards'" v-for="items in Art"   >
 {{ items.title }}
 {{ items.culture }}
 {{ items.itemName }}
@@ -24,7 +29,7 @@
 {{ items.artistDisplayBio }}
 {{ items.classification }}
 <button @click="showId(items.objectID)">ID</button>
-</base-card>
+</base-card> 
 
 <button class="button-56" @click="getCultureID">Load More</button>
 </template>
@@ -37,10 +42,15 @@ export default {
             Art: [],
             Category: "",
             count: 0,
-            twelve: 12
+            twelve: 12,
+            currentComponent:''
         };
     },
     methods: {
+      setFlashcard() {
+        this.currentComponent = 'FlashCards'
+        console.log(this.currentComponent)
+      },
         showId(id) {
             console.log(id);
         },
