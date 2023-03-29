@@ -13,7 +13,7 @@
 
 <component :is="currentComponent"></component>
 
-<button @click="setFlashcard">FlashCards  </button>
+<button @click="setFlashcard(selectedId)">FlashCards  </button>
 <button @click="this.currentComponent = ''">ArtList  </button>
 
 
@@ -28,7 +28,7 @@
 {{ items.artistDisplayName }}
 {{ items.artistDisplayBio }}
 {{ items.classification }}
-<button @click="showId(items.objectID)">ID</button>
+<button @click="selectedId = items.objectID">ID</button>
 </base-card> 
 
 <button class="button-56" @click="getCultureID">Load More</button>
@@ -43,13 +43,16 @@ export default {
             Category: "",
             count: 0,
             twelve: 12,
-            currentComponent:''
+            currentComponent:'',
+            selectedId:null,
         };
     },
     methods: {
-      setFlashcard() {
+      setFlashcard(id) {
         this.currentComponent = 'FlashCards'
         console.log(this.currentComponent)
+        this.selectedId = id;
+
       },
         showId(id) {
             console.log(id);
