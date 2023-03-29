@@ -11,9 +11,9 @@
 <button  class="button-56" @click="setAfrica">Africa</button>   
 <button  class="button-56" @click="setRussia">Russia</button>   
 
-<component :is="currentComponent"></component>
+<component :is="currentComponent" :selectedId="selectedId"></component>
 
-<button @click="setFlashcard(selectedId)">FlashCards  </button>
+<button @click="setFlashcard()">FlashCards  </button>
 <button @click="this.currentComponent = ''">ArtList  </button>
 
 
@@ -28,7 +28,7 @@
 {{ items.artistDisplayName }}
 {{ items.artistDisplayBio }}
 {{ items.classification }}
-<button @click="selectedId = items.objectID">ID</button>
+<button @click="showId(items.objectID)">show ID</button>
 </base-card> 
 
 <button class="button-56" @click="getCultureID">Load More</button>
@@ -44,18 +44,16 @@ export default {
             count: 0,
             twelve: 12,
             currentComponent:'',
-            selectedId:null,
+            selectedId:[],
         };
     },
     methods: {
-      setFlashcard(id) {
+      setFlashcard() {
         this.currentComponent = 'FlashCards'
-        console.log(this.currentComponent)
-        this.selectedId = id;
-
       },
         showId(id) {
-            console.log(id);
+            this.selectedId.push(id);        
+            console.log('this is id',this.selectedId)
         },
         setFrench() {
             this.Category = "France";
