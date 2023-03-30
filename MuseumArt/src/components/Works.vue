@@ -147,7 +147,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    height:20rem;
+    height:2rem;
     padding: 2rem;
 }
 </style>
