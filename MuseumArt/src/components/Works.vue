@@ -13,12 +13,12 @@
 
 <component :is="currentComponent" :selectedId="selectedId"></component>
 
-<button @click="setFlashcard()">StudyList  </button>
-<button @click="this.currentComponent = ''">ArtList  </button>
+<button class="button-56" @click="setStudyList()">Add to StudyList  </button>
+<button class="button-56" @click="this.currentComponent = ''">ArtList  </button>
 
 
 
-<base-card v-if="this.currentComponent != 'FlashCards'" v-for="items in Art"   >
+<base-card v-if="this.currentComponent != 'StudyList'" v-for="items in Art"   >
 {{ items.title }}
 {{ items.culture }}
 {{ items.itemName }}
@@ -28,7 +28,7 @@
 {{ items.artistDisplayName }}
 {{ items.artistDisplayBio }}
 {{ items.classification }}
-<button @click="showId(items.objectID)">show ID</button>
+<button class="button-56" @click="showId(items.objectID)">show ID</button>
 </base-card> 
 
 <button class="button-56" @click="getCultureID">Load More</button>
@@ -48,8 +48,8 @@ export default {
         };
     },
     methods: {
-      setFlashcard() {
-        this.currentComponent = 'FlashCards'
+      setStudyList() {
+        this.currentComponent = 'StudyList'
       },
         showId(id) {
             this.selectedId.push(id);        
@@ -136,6 +136,6 @@ export default {
             });
         }
     },
-    components: { FlashCards }
+    components: { StudyList }
 }
 </script>
