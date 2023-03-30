@@ -2,6 +2,7 @@
 
 
 <template>
+    <main>
   <h2>Pick a Category</h2>
 <button class="button-56" @click="setFrench">French</button> 
 <button  class="button-56" @click="setChina">China</button>   
@@ -10,13 +11,14 @@
 <button  class="button-56" @click="setIndia">India</button>   
 <button  class="button-56" @click="setAfrica">Africa</button>   
 <button  class="button-56" @click="setRussia">Russia</button>   
+</main>
 
-<component :is="currentComponent" :selectedId="selectedId"></component>
-
+<aside class="Options">
 <button class="button-56" @click="setStudyList()">StudyList  </button>
 <button class="button-56" @click="this.currentComponent = ''">ArtList  </button>
+</aside>
 
-
+<component :is="currentComponent" :selectedId="selectedId"></component>
 
 <base-card v-if="this.currentComponent != 'StudyList'" v-for="items in Art"   >
 {{ items.title }}
@@ -139,3 +141,13 @@ export default {
     components: { StudyList }
 }
 </script>
+
+<style scoped>
+.Options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:20rem;
+    padding: 2rem;
+}
+</style>

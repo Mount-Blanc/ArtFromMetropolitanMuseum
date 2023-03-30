@@ -36,9 +36,6 @@ body{
   position: relative;
   text-align: center;
   text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 }
 
 .button-56:after {

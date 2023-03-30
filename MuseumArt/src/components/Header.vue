@@ -13,10 +13,7 @@ export default {
 
 <style scoped>
 
-.container {
-    display: flex;
-    flex-direction: column;
-}
+
 h1,h2 {
     color:white
 }
