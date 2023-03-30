@@ -13,7 +13,7 @@
 
 <component :is="currentComponent" :selectedId="selectedId"></component>
 
-<button @click="setFlashcard()">FlashCards  </button>
+<button @click="setFlashcard()">StudyList  </button>
 <button @click="this.currentComponent = ''">ArtList  </button>
 
 
@@ -35,7 +35,7 @@
 </template>
 
 <script>  
-import FlashCards from './FlashCards.vue'
+import StudyList from './StudyList.vue'
 export default {
     data() {
         return {
