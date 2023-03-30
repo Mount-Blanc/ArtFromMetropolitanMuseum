@@ -13,7 +13,7 @@
 
 <component :is="currentComponent" :selectedId="selectedId"></component>
 
-<button class="button-56" @click="setStudyList()">Add to StudyList  </button>
+<button class="button-56" @click="setStudyList()">StudyList  </button>
 <button class="button-56" @click="this.currentComponent = ''">ArtList  </button>
 
 
@@ -28,7 +28,7 @@
 {{ items.artistDisplayName }}
 {{ items.artistDisplayBio }}
 {{ items.classification }}
-<button class="button-56" @click="showId(items.objectID)">show ID</button>
+<button class="button-56" @click="showId(items.objectID)">Add to StudyList</button>
 </base-card> 
 
 <button class="button-56" @click="getCultureID">Load More</button>
@@ -113,7 +113,7 @@ export default {
         },
         getCultureID() {
             // Simple GET request using fetch
-            fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?geoLocation=${this.Category}&q=flowers`)
+            fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?artistOrCulture=true&q=${this.Category}`)
                 .then(response => response.json())
                 .then(data => {
                 const objectID = data.objectIDs;
