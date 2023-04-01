@@ -7,7 +7,8 @@ export default defineConfig({
   plugins: [],
   build: {
     // disable build import analysis
-    analyze: false,
+    analyze: false
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
