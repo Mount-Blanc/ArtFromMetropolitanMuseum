@@ -6,8 +6,10 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [],
   build: {
-    // disable build import analysis
-    analyze: false
+    rollupOptions: {
+      input: 'index.html',
+      importAnalysis: false
+    }
   },
   resolve: {
     alias: {
