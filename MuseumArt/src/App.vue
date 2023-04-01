@@ -1,9 +1,9 @@
 
 
 <template>
-   <Header></Header>
-   <Search></Search>
-   <Works></Works>
+   <Header/>
+   <Search/>
+   <Works/>
 </template>
 
 <script>
