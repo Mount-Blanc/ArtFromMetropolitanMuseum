@@ -14,6 +14,11 @@
     "install": "cd MuseumArt && npm install" 
 
   },
+  "dependencies": {
+    "vue": "^3.2.47",
+    "vite": "^4.2.1"
+
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mount-Blanc/ArtFromMetropolitanMuseum.git"
