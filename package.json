@@ -10,8 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd MuseumArt/server && npm install && node server.js",
     "build": "cd MuseumArt && npm run build",
-    "install": "cd MuseumArt && npm install" ,
-        "postinstall": "cd MuseumArt && npm run build"
+    "install": "cd MuseumArt && npm install" 
 
   },
   "repository": {
