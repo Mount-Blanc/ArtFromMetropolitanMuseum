@@ -1,6 +1,9 @@
 {
   "name": "artfrommetropolitanmuseum",
   "version": "1.0.0",
+  "engines": {
+    "node": "v18.12.1"
+  },
   "description": "An easy way to look at the art available in The Metropolitan Museum",
   "main": "index.js",
   "scripts": {
