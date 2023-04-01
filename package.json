@@ -11,8 +11,8 @@
     "start": "cd MuseumArt/server && npm install && node server.js",
     "build": "cd MuseumArt && npm run build",
     "install": "cd MuseumArt && npm install" ,
-    "heroku-postbuild": "cd MuseumArt && npm install && npm run build",
-    "postinstall": "cd MuseumArt && npm run build"
+    "heroku-postbuild": " cd MuseumArt export PATH=$PATH:./node_modules/.bin && vite build",
+        "postinstall": "cd MuseumArt && npm run build"
 
   },
   "repository": {
