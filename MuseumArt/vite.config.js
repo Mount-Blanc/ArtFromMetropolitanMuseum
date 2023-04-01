@@ -7,9 +7,16 @@ export default defineConfig({
   plugins: [],
   build: {
     rollupOptions: {
-      input: 'index.html',
-      importAnalysis: false
-    }
+      input: {
+        main: './index.html',
+      },
+    },
+    // disable manifest and manifest.json generation
+    manifest: false,
+    outDir: 'dist',
+  },
+  optimizeDeps: {
+    include: [],
   },
   resolve: {
     alias: {
