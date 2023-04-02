@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/Art/",
   plugins: [],
   optimizeDeps: {
     include: [], // Set this to an empty array to disable import analysis
