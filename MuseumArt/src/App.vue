@@ -2,20 +2,17 @@
 
 <template>
    <Header/>
-   <Search/>
    <Works/>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
 import Header from './components/Header.vue';
-import Search from './components/Search.vue';
 import Works from './components/Works.vue';
 
 export default defineComponent({
   components: {
     Header,
-    Search,
     Works,
   },
 });

@@ -2,8 +2,8 @@
 
 
 <template>
-    <main>
-  <h2>Pick a Category</h2>
+    <main >
+ <h2>Pick a Category</h2>
 <button class="button-56" @click="setFrench">French</button> 
 <button  class="button-56" @click="setChina">China</button>   
 <button  class="button-56" @click="setMexico">Mexico</button>
@@ -143,6 +143,7 @@ export default {
 </script>
 
 <style scoped>
+
 .Options {
     display: flex;
     justify-content: center;
